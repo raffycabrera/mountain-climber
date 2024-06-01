@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 3em;
+  margin: 0 10px;
+}
+
+.timer-button {
+  font-size: 1em;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.timer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+
+
+.controls {
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.climber-container {
+  position: relative;
+  height: 100px;
+  /* Adjust based on your climber image */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 20px;
+  /* Adjust the spacing between the timer and the climber */
+}
+
+.climber {
+  width: 50px;
+  height: 50px;
+  background: url('/public/logo192.png') no-repeat center/contain;
+}
