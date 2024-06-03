@@ -1,5 +1,7 @@
 import React from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
+import { saveTime } from '@/lib/action';
+
 
 type CircularTimerProps = {
   duration: number;
@@ -7,7 +9,26 @@ type CircularTimerProps = {
   key: number;
 };
 
+
+
+
+
 const CircularTimer = ({ duration, isRunning, key }: CircularTimerProps) => {
+  const handleComplete = async () => {
+    const time = duration;
+
+    try {
+      const result = await saveTime(time);
+      console.log('Time entry saved:', result);
+    } catch (error) {
+      console.error('Error saving time entry:', error);
+    }
+
+    // Return false to stop the timer
+    return { shouldRepeat: false };
+  };
+
+
   return (
     <div className="circular-timer">
       <CountdownCircleTimer
@@ -20,7 +41,7 @@ const CircularTimer = ({ duration, isRunning, key }: CircularTimerProps) => {
         strokeWidth={10}
         rotation='clockwise'
         isGrowing={true}
-        onComplete={() => ({ shouldRepeat: false })}
+        onComplete={handleComplete}
       >
         {({ remainingTime }) => (
           <div className="timer">

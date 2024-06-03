@@ -5,7 +5,7 @@ import '../styles/App.css';
 
 
 const Home = () => {
-  const initialTime = 30; //1500 25 minutes in seconds
+  const initialTime = 5; //1500 25 minutes in seconds
   return (
     <div className="App">
       <Timer initialTime={initialTime} />
