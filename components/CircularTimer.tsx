@@ -16,8 +16,10 @@ const CircularTimer = ({ duration, isRunning, key }: CircularTimerProps) => {
         duration={duration}
         colors={['#004777', '#F7B801', '#A30000', '#A30000']}
         colorsTime={[7, 5, 2, 0]}
-        size={120}
-        strokeWidth={6}
+        size={140}
+        strokeWidth={10}
+        rotation='clockwise'
+        isGrowing={true}
         onComplete={() => ({ shouldRepeat: false })}
       >
         {({ remainingTime }) => (

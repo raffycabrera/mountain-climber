@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Climber from './Climber';
 import CircularTimer from './CircularTimer';
+import SVGDefs from '@/styles/svgDef';
 
 type TimerProps = {
   initialTime: number;
@@ -35,6 +36,9 @@ const Timer = ({ initialTime }: TimerProps) => {
 
       {!isRunning && <div className="timer-controls">
 
+        <div className="timer">
+          {Math.floor(time / 60)}:{time % 60 < 10 ? '0' + (time % 60) : time % 60}
+        </div>
         <div className="timer-buttons">
           <button className="timer-button" onClick={incrementTime}>Up</button>
           <button className="timer-button" onClick={decrementTime}>Down</button>
@@ -46,13 +50,9 @@ const Timer = ({ initialTime }: TimerProps) => {
 
       }
 
-
-
-
       <div className="controls">
-        {!isRunning && <button onClick={startTimer}>Start</button>}
-        {isRunning && <button onClick={stopTimer}>Stop</button>}
-        <button onClick={resetTimer}>Reset</button>
+        {!isRunning ? <button onClick={startTimer}>Start</button> : <button onClick={stopTimer}>Stop</button>}
+        {!isRunning && <button onClick={resetTimer}>Reset</button>}
       </div>
       <Climber isRunning={isRunning} />
     </div>

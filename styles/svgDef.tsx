@@ -1,5 +1,7 @@
+
+
 const SVGDefs = () => (
-  <svg width="0" height="0">
+  <svg>
     <defs>
       <linearGradient id="timer-gradient" x1="1" y1="0" x2="0" y2="0">
         <stop offset="5%" stopColor="gold" />
