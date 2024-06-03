@@ -14,6 +14,8 @@ type CircularTimerProps = {
 
 
 const CircularTimer = ({ duration, isRunning, key }: CircularTimerProps) => {
+
+
   const handleComplete = async () => {
     const time = duration;
 
@@ -41,7 +43,10 @@ const CircularTimer = ({ duration, isRunning, key }: CircularTimerProps) => {
         strokeWidth={10}
         rotation='clockwise'
         isGrowing={true}
-        onComplete={handleComplete}
+        onComplete={() => {
+          handleComplete(); // Call handleComplete function
+          return { shouldRepeat: false, delay: 1500 };
+        }}
       >
         {({ remainingTime }) => (
           <div className="timer">
