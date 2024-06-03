@@ -1,7 +1,7 @@
 'use server';
 import { sql } from "@vercel/postgres";
 
-export async function saveTime(time) {
+export async function saveTime(time: number) {
   const rawTimeData = {
 
     duration: time,
