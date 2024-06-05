@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './SideNav.module.css';
+import styles from './sideNav.module.css';
 
 const SideNav: React.FC = () => {
   return (
