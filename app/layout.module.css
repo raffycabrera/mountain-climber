@@ -1,0 +1,10 @@
+.body {
+  display: flex;
+}
+
+.mainContent {
+  margin-left: 250px;
+  /* Adjust according to the width of your SideNav */
+  padding: 20px;
+  width: 100%;
+}
